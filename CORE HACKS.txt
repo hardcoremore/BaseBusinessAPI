@@ -1,0 +1,5 @@
+2012-01-11
+Filename: system/core/Loader.php
+method name: dbforge
+description: added paramtere $db CI database object to allow for model 
+to load dbforge class if controller doesn't load database. HACK

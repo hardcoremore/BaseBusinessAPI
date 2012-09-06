@@ -1,0 +1,11 @@
+<?php
+
+class DatabaseAttributes
+{
+	const MYSQLI_UNSIGNED							= 'UNSIGNED';
+	const MYSQLI_UNSIGNED_ZERO_FILL 				= 'UNSIGNED ZERO FILL';
+	const MYSQLI_ON_UPDATE_CURRENT_TIME_STAMP 	= 'ON UPDATE CURRENT TIME STAMP';
+
+}
+
+?>
