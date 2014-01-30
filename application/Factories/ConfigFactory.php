@@ -18,7 +18,7 @@ class ConfigFactory
 		$db 						= new DatabaseConfigVo();
 		$db->hostname 				= '127.0.0.1';
 		$db->username 				= 'root';
-		$db->password 				= 'chaky87300';
+		$db->password 				= '';
 		$db->database				= 'appdata';
 		$db->dbdriver 				= 'mysqli';
 		$db->dbprefix 				= '';

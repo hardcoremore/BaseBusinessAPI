@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.10.1
+-- version 4.0.4
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 27, 2012 at 04:20 PM
--- Server version: 5.1.53
--- PHP Version: 5.3.4
+-- Generation Time: Nov 16, 2013 at 11:07 AM
+-- Server version: 5.6.12-log
+-- PHP Version: 5.4.12
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `53d61a0b524eef1ec3768c14d76dad2b`
 --
+CREATE DATABASE IF NOT EXISTS `53d61a0b524eef1ec3768c14d76dad2b` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `53d61a0b524eef1ec3768c14d76dad2b`;
 
 -- --------------------------------------------------------
 
@@ -193,14 +195,47 @@ CREATE TABLE IF NOT EXISTS `data_holder` (
 --
 
 CREATE TABLE IF NOT EXISTS `data_holder_columns` (
-  `data_holder_columns_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
-  `data_holder_id` int(10) unsigned NOT NULL,
-  `data_holder_column_name` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `data_holder_column_id` smallint(5) unsigned NOT NULL AUTO_INCREMENT,
+  `data_holder_id` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
+  `data_holder_column_user_id` int(10) unsigned NOT NULL,
+  `data_holder_column_position_index` tinyint(3) unsigned NOT NULL,
   `data_holder_column_header_text` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `data_holder_column_data_field` varchar(150) COLLATE utf8_unicode_ci NOT NULL,
   `data_holder_column_visible` tinyint(3) unsigned NOT NULL,
-  PRIMARY KEY (`data_holder_columns_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+  `data_holder_column_custom_header_text` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `data_holder_column_custom_header` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`data_holder_column_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=25 ;
+
+--
+-- Dumping data for table `data_holder_columns`
+--
+
+INSERT INTO `data_holder_columns` (`data_holder_column_id`, `data_holder_id`, `data_holder_column_user_id`, `data_holder_column_position_index`, `data_holder_column_header_text`, `data_holder_column_data_field`, `data_holder_column_visible`, `data_holder_column_custom_header_text`, `data_holder_column_custom_header`) VALUES
+(1, 'customersDataHolder', 1, 10, 'city', 'customer_city', 1, 'null', 0),
+(2, 'customersDataHolder', 1, 22, 'creditLimit', 'customer_credit_limit', 1, 'null', 0),
+(3, 'customersDataHolder', 1, 13, 'companyNumber', 'customer_company_number', 1, 'null', 0),
+(4, 'customersDataHolder', 1, 2, 'name', 'customer_name', 1, 'null', 0),
+(5, 'customersDataHolder', 1, 18, 'bankAccount', 'customer_bank_account', 1, 'null', 0),
+(6, 'customersDataHolder', 1, 23, 'ID', 'customer_id', 0, 'null', 0),
+(7, 'customersDataHolder', 1, 16, 'since', 'customer_since', 1, 'Клијент од', 1),
+(8, 'customersDataHolder', 1, 11, 'city', 'customer_address', 1, 'null', 0),
+(9, 'customersDataHolder', 1, 19, 'bankAccount 2', 'customer_bank_account2', 1, 'Банковни рачун 2', 1),
+(10, 'customersDataHolder', 1, 12, 'email', 'customer_email_address', 1, 'null', 0),
+(11, 'customersDataHolder', 1, 20, 'bankAccount 3', 'customer_bank_account3', 1, 'Банковни рачун 3', 1),
+(12, 'customersDataHolder', 1, 6, 'mobile 2', 'customer_mobile2', 1, 'Телефон 2', 1),
+(13, 'customersDataHolder', 1, 17, 'note', 'customer_note', 1, 'null', 0),
+(14, 'customersDataHolder', 1, 9, 'zipCode', 'customer_zip_code', 1, 'null', 0),
+(15, 'customersDataHolder', 1, 3, 'phone', 'customer_telephone', 1, 'null', 0),
+(16, 'customersDataHolder', 1, 21, 'currency', 'customer_currency', 1, 'null', 0),
+(17, 'customersDataHolder', 1, 5, 'mobile', 'customer_mobile', 1, 'null', 0),
+(18, 'customersDataHolder', 1, 14, 'companyVatNumber', 'customer_company_vat_number', 1, 'null', 0),
+(19, 'customersDataHolder', 1, 15, 'companyTaxNumber', 'customer_company_tax_number', 1, 'null', 0),
+(20, 'customersDataHolder', 1, 7, 'contactPerson 2', 'customer_contact_person', 1, 'Контакт особа', 1),
+(21, 'customersDataHolder', 1, 8, 'country', 'customer_country', 1, 'null', 0),
+(22, 'customersDataHolder', 1, 4, 'phone 2', 'customer_telephone2', 1, 'Telefon 2', 1),
+(23, 'customersDataHolder', 1, 1, 'type', 'customer_sales_type', 1, 'null', 0),
+(24, 'customersDataHolder', 1, 0, 'code', 'customer_code', 1, 'null', 0);
 
 -- --------------------------------------------------------
 
@@ -216,6 +251,9 @@ CREATE TABLE IF NOT EXISTS `desktop_appearance` (
   `desktop_appearance_icon_size` mediumint(8) unsigned NOT NULL,
   `desktop_appearance_font_size` mediumint(8) unsigned NOT NULL,
   `desktop_appearance_controll_button_size` mediumint(8) unsigned NOT NULL,
+  `desktop_appearance_wallpaper_type` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `desktop_appearance_wallpaper_url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `desktop_appearance_wallpaper_color` bigint(20) NOT NULL,
   `desktop_appearance_window_background_color` int(10) unsigned NOT NULL,
   `desktop_appearance_window_background_alpha` decimal(2,1) NOT NULL,
   `desktop_appearance_window_border_color` mediumint(8) unsigned NOT NULL,
@@ -232,10 +270,10 @@ CREATE TABLE IF NOT EXISTS `desktop_appearance` (
 -- Dumping data for table `desktop_appearance`
 --
 
-INSERT INTO `desktop_appearance` (`desktop_appearance_id`, `desktop_appearance_user_id`, `desktop_appearance_name`, `desktop_appearance_default`, `desktop_appearance_icon_size`, `desktop_appearance_font_size`, `desktop_appearance_controll_button_size`, `desktop_appearance_window_background_color`, `desktop_appearance_window_background_alpha`, `desktop_appearance_window_border_color`, `desktop_appearance_window_border_alpha`, `desktop_appearance_taskbar_position`, `desktop_appearance_taskbar_label_visible`, `desktop_appearance_taskbar_thickness`, `desktop_appearance_taskbar_color`, `desktop_appearance_taskbar_alpha`) VALUES
-(4, 1, 'Default Theme', 1, 96, 14, 32, 16777215, '1.0', 39423, '1.0', 'taskbar-bottom-position', 1, 32, 39423, '1.0'),
-(5, 1, 'Pink Theme', 0, 96, 14, 32, 16777215, '1.0', 16751052, '1.0', 'taskbar-left-position', 0, 48, 16751052, '1.0'),
-(6, 1, 'Green Theme', 0, 96, 14, 32, 16773119, '1.0', 26112, '1.0', 'taskbar-top-position', 1, 32, 26112, '1.0');
+INSERT INTO `desktop_appearance` (`desktop_appearance_id`, `desktop_appearance_user_id`, `desktop_appearance_name`, `desktop_appearance_default`, `desktop_appearance_icon_size`, `desktop_appearance_font_size`, `desktop_appearance_controll_button_size`, `desktop_appearance_wallpaper_type`, `desktop_appearance_wallpaper_url`, `desktop_appearance_wallpaper_color`, `desktop_appearance_window_background_color`, `desktop_appearance_window_background_alpha`, `desktop_appearance_window_border_color`, `desktop_appearance_window_border_alpha`, `desktop_appearance_taskbar_position`, `desktop_appearance_taskbar_label_visible`, `desktop_appearance_taskbar_thickness`, `desktop_appearance_taskbar_color`, `desktop_appearance_taskbar_alpha`) VALUES
+(4, 1, 'Default Theme', 1, 96, 14, 32, 'image', 'http://hidefwalls.com/wp-content/g/hd-2/at-the-beach-hd-wallpaper-1920x1200.jpg', 0, 16777215, '1.0', 39423, '0.6', 'taskbar-bottom-position', 1, 32, 39423, '1.0'),
+(5, 1, 'Pink Theme', 0, 96, 14, 32, '', '0', 0, 16777215, '1.0', 16751052, '1.0', 'taskbar-left-position', 0, 48, 16751052, '1.0'),
+(6, 1, 'Green Theme', 0, 96, 14, 32, '', '0', 0, 16773119, '1.0', 26112, '1.0', 'taskbar-top-position', 1, 32, 26112, '1.0');
 
 -- --------------------------------------------------------
 

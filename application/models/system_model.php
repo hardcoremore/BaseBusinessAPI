@@ -101,12 +101,12 @@ class System_model extends BaseModel
 		$this->db->where( "data_holder_id", $col->data_holder_id );
 		$this->db->where( "data_holder_column_user_id", $col->data_holder_column_user_id );
 		$this->db->where( "data_holder_column_data_field", $col->data_holder_column_data_field );
-		
+
 		$exists = $this->db->count_all_results( 'data_holder_columns' );
 		
 		if( $exists > 0 )
 		{
-			
+
 			$this->db->where( "data_holder_id", $col->data_holder_id );
 			$this->db->where( "data_holder_column_user_id", $col->data_holder_column_user_id );
 			$this->db->where( "data_holder_column_data_field", $col->data_holder_column_data_field );

@@ -32,7 +32,7 @@ class System_install_model extends BaseModel
                                           )                                          
                 );
        
-		$this->dbforge->add_key('data_holder_id', TRUE);               
+		    $this->dbforge->add_key('data_holder_id', TRUE);               
         $this->dbforge->add_field( $data_holder );    
         $this->dbforge->create_table( 'data_holder' );
         
@@ -46,8 +46,8 @@ class System_install_model extends BaseModel
                                           ),
                                           
                         'data_holder_id' => array(
-                                                 'type' => 'VARCHAR',
-                                          		 'constraint' => 150
+                                              'type' => 'VARCHAR',
+                                          		'constraint' => 150
                                           ),
                                           
                         'data_holder_user_id' => array(
@@ -55,40 +55,40 @@ class System_install_model extends BaseModel
                                                  'unsigned' => TRUE
                                           ),
                                           
-						'data_holder_column_position_index' => array(
-                                                 'type' => 'TINYINT',
-                                          		 'unsigned' => TRUE
-                                          ),
-                                                                                                       
-						'data_holder_column_data_field' => array(
-                                                 'type' => 'VARCHAR',
-                                          		 'constraint' => 150
-                                          ),
-                                                                                    
-						'data_holder_column_header_text' => array(
-                                                 'type' => 'VARCHAR',
-                                          		 'constraint' => 150
-                                          ),
-                                                                                    
-						'data_holder_column_visible' => array(
-                                                 'type' => 'TINYINT',
-                                          		 'unsigned' => TRUE
-                                          ),
-                                                                                    
-						'data_holder_column_custom_header_text' => array(
-                                                 'type' => 'VARCHAR',
-                                          		 'constraint' => 150
-                                          ),
-                                                                                    
-						'data_holder_column_custom_header' => array(
-                                                 'type' => 'TINYINT',
-                                          		 'unsigned' => TRUE,
-                                          		 'default' => 0
-                                          )                                          
+            						'data_holder_column_position_index' => array(
+                                                           'type' => 'TINYINT',
+                                                      		 'unsigned' => TRUE
+                                                      ),
+                                                                                                                   
+            						'data_holder_column_data_field' => array(
+                                                             'type' => 'VARCHAR',
+                                                      		   'constraint' => 150
+                                                      ),
+                                                                                                
+            						'data_holder_column_header_text' => array(
+                                                             'type' => 'VARCHAR',
+                                                      		   'constraint' => 150
+                                                      ),
+                                                                                                
+            						'data_holder_column_visible' => array(
+                                                             'type' => 'TINYINT',
+                                                      		 'unsigned' => TRUE
+                                                      ),
+                                                                                                
+            						'data_holder_column_custom_header_text' => array(
+                                                             'type' => 'VARCHAR',
+                                                      		 'constraint' => 150
+                                                      ),
+                                                                                                
+            						'data_holder_column_custom_header' => array(
+                                                             'type' => 'TINYINT',
+                                                      		   'unsigned' => TRUE,
+                                                      		   'default' => 0
+                                                      )                                          
                                                                                     
                 );
        
-		$this->dbforge->add_key( 'data_holder_columns_id', TRUE );               
+		    $this->dbforge->add_key( 'data_holder_columns_id', TRUE );               
         $this->dbforge->add_field( $data_holder_columns );    
         $this->dbforge->create_table( 'data_holder_columns' );
         
