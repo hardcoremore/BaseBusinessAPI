@@ -4,9 +4,12 @@
 	<allow-access-from domain="bbos.local" />
 	<allow-access-from domain="bbos.hardcoremore.com" />
 	<allow-access-from domain="bbclient.hardcoremore.com" />
+	<allow-access-from domain="193.34.144.245" />
+	
 
 	<allow-http-request-headers-from domain="bbos.local" headers="*"/>
 	<allow-http-request-headers-from domain="bbos.hardcoremore.com" headers="*"/>
 	<allow-http-request-headers-from domain="bbclient.hardcoremore.com" headers="*"/>
+	<allow-http-request-headers-from domain="193.34.144.245" headers="*"/>
 
 </cross-domain-policy> 
