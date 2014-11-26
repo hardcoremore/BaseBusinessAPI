@@ -1,7 +1,12 @@
 <?xml version="1.0"?>
 <cross-domain-policy>
+	
 	<allow-access-from domain="bbos.local" />
 	<allow-access-from domain="bbos.hardcoremore.com" />
+	<allow-access-from domain="bbclient.hardcoremore.com" />
+
 	<allow-http-request-headers-from domain="bbos.local" headers="*"/>
 	<allow-http-request-headers-from domain="bbos.hardcoremore.com" headers="*"/>
+	<allow-http-request-headers-from domain="bbclient.hardcoremore.com" headers="*"/>
+
 </cross-domain-policy> 
