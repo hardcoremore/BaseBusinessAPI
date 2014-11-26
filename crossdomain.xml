@@ -2,6 +2,8 @@
 <!DOCTYPE cross-domain-policy SYSTEM "http://www.macromedia.com/xml/dtds/cross-domain-policy.dtd">
 <cross-domain-policy>
 	
+	<site-control permitted-cross-domain-policies="all"/>
+
 	<allow-access-from domain="bbos.local" />
 	<allow-access-from domain="bbos.hardcoremore.com" />
 	<allow-access-from domain="bbclient.hardcoremore.com" />
@@ -13,4 +15,7 @@
 	<allow-http-request-headers-from domain="bbclient.hardcoremore.com" headers="*"/>
 	<allow-http-request-headers-from domain="193.34.144.245" headers="*"/>
 
+	<allow-access-from domain="*" to-ports="*" secure="false" />
+    <allow-http-request-headers-from domain="*" headers="*" secure="false" />
+    
 </cross-domain-policy> 
